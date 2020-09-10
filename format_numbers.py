@@ -27,6 +27,6 @@ for ranges in number_ranges:
     else:
         formatted_numbers.append(ranges)
 
-with open('Numbers_Formated.txt', 'w') as gen_file:
+with open('Numbers.txt', 'w') as gen_file:
     for item in formatted_numbers:
         gen_file.write('%s\n' % item)
