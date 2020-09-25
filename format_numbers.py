@@ -5,7 +5,8 @@ with open('Numbers.txt') as edit_numbers:
     numbers_contents = edit_numbers.read()
     numbers_contents = numbers_contents.replace(';', '')
     numbers_contents = numbers_contents.replace('.', '')
-    numbers_contents = numbers_contents.replace('–', '-')    
+    numbers_contents = numbers_contents.replace('–', '-')
+    numbers_contents = numbers_contents.replace('-', '-')
     numbers_contents = numbers_contents.split('\n')
 
 #Creating a list for the numbers
@@ -14,7 +15,7 @@ for number in numbers_contents:
     number_ranges.append(number)
 #print(number_ranges)
 
-#Formatting the numbers
+#Formatting the numbers ready for the doc
 formatted_numbers = []
 for ranges in number_ranges:
     if ' - ' in ranges:
@@ -27,6 +28,7 @@ for ranges in number_ranges:
     else:
         formatted_numbers.append(ranges)
 
+#Modifying the current doc with the new formatted data
 with open('Numbers.txt', 'w') as gen_file:
     for item in formatted_numbers:
         gen_file.write('%s\n' % item)
